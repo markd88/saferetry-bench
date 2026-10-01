@@ -1,0 +1,20 @@
+config: configs/full.json   prompt samples per level: 2   only: deepseek/deepseek-v4.1-flash
+model                          effort   provider          ok  reasoning_tok reasoning_chars completion_tok  note
+deepseek/deepseek-v4.1-flash   none     Alibaba            2              0               0           1327  
+deepseek/deepseek-v4.1-flash   minimal  Alibaba            2            680            1978            686  
+deepseek/deepseek-v4.1-flash   low      Alibaba            2            932            2634            938  
+deepseek/deepseek-v4.1-flash   medium   Alibaba            2            838            2188            844  
+deepseek/deepseek-v4.1-flash   high     Alibaba            2            771            2161            777  
+deepseek/deepseek-v4.1-flash   xhigh    Alibaba            2            638            1789            645  
+deepseek/deepseek-v4.1-flash   max      Alibaba            2           1088            3102           1094  
+  -> deepseek/deepseek-v4.1-flash: lowest = 'none' (reasoning switched off)
+
+run configuration (planned rule):
+  openai/gpt-6-luna: effort=none
+  openai/gpt-6-sol: effort=none
+  qwen/qwen3.8-flash: effort=none
+  google/gemini-3.8-flash: effort=minimal
+  deepseek/deepseek-v4.1-flash: effort=none
+  openai/gpt-6-sol@max: effort=max
+
+wrote configs/full.json

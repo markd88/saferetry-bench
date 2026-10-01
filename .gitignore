@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+.venv/
+# uncompressed / regenerated outputs
+results/*.jsonl
+results/*_summary.csv*
+# regenerated outputs (python analyze.py ... / scripts/make_tables.py / scripts/power_sim.py)
+results/full_analysis.txt
+results/tables.md
+results/power_sim.txt
+results/type1_check.txt
+results/ci_coverage.txt
+results/prompt_tests.csv
+results/prompt_analysis.txt

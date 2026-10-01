@@ -1,0 +1,97 @@
+{
+  "_note": "Configuration of the full experiment: five models at their lowest reasoning setting ('none' where reasoning can be switched off, else 'minimal') plus GPT-6 Sol at 'max'. provider = OpenRouter provider slug, pinned without fallbacks. Settings were verified with scripts/check_reasoning.py; model ids and prices as of 2026-09-24.",
+  "models": [
+    {
+      "id": "openai/gpt-6-luna",
+      "provider": "openai",
+      "price_per_mtok": {
+        "prompt": 0.1,
+        "completion": 0.5
+      },
+      "rpm": 15,
+      "reasoning": {
+        "effort": "none"
+      },
+      "max_tokens": 4096
+    },
+    {
+      "id": "openai/gpt-6-sol",
+      "provider": "openai",
+      "price_per_mtok": {
+        "prompt": 2.0,
+        "completion": 10.0
+      },
+      "rpm": 15,
+      "reasoning": {
+        "effort": "none"
+      },
+      "max_tokens": 4096
+    },
+    {
+      "id": "qwen/qwen3.8-flash",
+      "provider": "alibaba",
+      "price_per_mtok": {
+        "prompt": 0.15,
+        "completion": 0.47
+      },
+      "rpm": 15,
+      "reasoning": {
+        "effort": "none"
+      },
+      "max_tokens": 4096
+    },
+    {
+      "id": "google/gemini-3.8-flash",
+      "provider": "google-ai-studio",
+      "price_per_mtok": {
+        "prompt": 0.75,
+        "completion": 3.75
+      },
+      "rpm": 15,
+      "reasoning": {
+        "effort": "minimal"
+      },
+      "max_tokens": 4096
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash",
+      "provider": "alibaba",
+      "price_per_mtok": {
+        "prompt": 0.15,
+        "completion": 0.6
+      },
+      "rpm": 15,
+      "_provider_note": "DeepSeek's own endpoint unavailable on 2026-09-25 (all endpoints removed during routing); Alibaba: same price, no declared quantization.",
+      "reasoning": {
+        "effort": "none"
+      },
+      "max_tokens": 4096
+    },
+    {
+      "id": "openai/gpt-6-sol",
+      "provider": "openai",
+      "price_per_mtok": {
+        "prompt": 2.0,
+        "completion": 10.0
+      },
+      "rpm": 15,
+      "name": "openai/gpt-6-sol@max",
+      "reasoning": {
+        "effort": "max"
+      },
+      "max_tokens": 32000,
+      "_role": "strongest configuration: frontier model at its highest reasoning setting"
+    }
+  ],
+  "_reasoning_check": {
+    "lowest": {
+      "openai/gpt-6-luna": "none",
+      "openai/gpt-6-sol": "none",
+      "qwen/qwen3.8-flash": "none",
+      "google/gemini-3.8-flash": "minimal",
+      "deepseek/deepseek-v4.1-flash": "none"
+    },
+    "script": "scripts/check_reasoning.py",
+    "log": "results/reasoning_check.txt"
+  }
+}

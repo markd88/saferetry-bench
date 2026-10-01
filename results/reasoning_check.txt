@@ -1,0 +1,52 @@
+config: configs/full.json   prompt samples per level: 2
+model                          effort   provider          ok  reasoning_tok reasoning_chars completion_tok  note
+openai/gpt-6-luna              none     OpenAI             2              0               0             26  
+openai/gpt-6-luna              minimal  OpenAI             2            338             724            351  
+openai/gpt-6-luna              low      OpenAI             2            297             212            308  
+openai/gpt-6-luna              medium   OpenAI             2            504             486            516  
+openai/gpt-6-luna              high     OpenAI             2            407             248            420  
+openai/gpt-6-luna              xhigh    OpenAI             2            580             668            593  
+openai/gpt-6-luna              max      OpenAI             2            493             639            506  
+  -> openai/gpt-6-luna: lowest = 'none' (reasoning switched off)
+openai/gpt-6-sol               none     OpenAI             2              0               0             15  
+openai/gpt-6-sol               minimal  OpenAI             2            185             220            202  
+openai/gpt-6-sol               low      OpenAI             2            142               0            158  
+openai/gpt-6-sol               medium   OpenAI             2            252             217            268  
+openai/gpt-6-sol               high     OpenAI             2            220             208            233  
+openai/gpt-6-sol               xhigh    OpenAI             2            320             226            333  
+openai/gpt-6-sol               max      OpenAI             2            424             478            436  
+  -> openai/gpt-6-sol: lowest = 'none' (reasoning switched off)
+qwen/qwen3.8-flash             none     Alibaba            2              0               0           1434  
+qwen/qwen3.8-flash             minimal  Alibaba            2            864            2410            874  
+qwen/qwen3.8-flash             low      Alibaba            2           1442            3570           1451  
+qwen/qwen3.8-flash             medium   Alibaba            2           1224            2806           1232  
+qwen/qwen3.8-flash             high     Alibaba            2            885            2544            893  
+qwen/qwen3.8-flash             xhigh    Alibaba            2           1104            3034           1114  
+qwen/qwen3.8-flash             max      Alibaba            2            854            2336            863  
+  -> qwen/qwen3.8-flash: lowest = 'none' (reasoning switched off)
+google/gemini-3.8-flash        none     -                  0            nan             nan            nan  ERROR Error code: 400 - {'error': {'message': 'Reasoning is mandatory for this endpoint and cannot be disa
+google/gemini-3.8-flash        minimal  Google AI Studio   2            728             689            742  
+google/gemini-3.8-flash        low      Google AI Studio   2            671             440            678  
+google/gemini-3.8-flash        medium   Google AI Studio   2            968             802           1027  
+google/gemini-3.8-flash        high     Google AI Studio   2           1680            1381           1800  
+google/gemini-3.8-flash        xhigh    Google AI Studio   2           2156            1770           2216  
+google/gemini-3.8-flash        max      Google AI Studio   2           1744            1426           2044  
+  -> google/gemini-3.8-flash: lowest = 'minimal' (cannot switch off)
+deepseek/deepseek-v4.1-flash   none     -                  0            nan             nan            nan  ERROR Error code: 404 - {'error': {'message': 'No endpoints found for deepseek/deepseek-v4.1-flash. Every 
+deepseek/deepseek-v4.1-flash   minimal  -                  0            nan             nan            nan  ERROR Error code: 404 - {'error': {'message': 'No endpoints found for deepseek/deepseek-v4.1-flash. Every 
+deepseek/deepseek-v4.1-flash   low      -                  0            nan             nan            nan  ERROR Error code: 404 - {'error': {'message': 'No endpoints found for deepseek/deepseek-v4.1-flash. Every 
+deepseek/deepseek-v4.1-flash   medium   -                  0            nan             nan            nan  ERROR Error code: 404 - {'error': {'message': 'No endpoints found for deepseek/deepseek-v4.1-flash. Every 
+deepseek/deepseek-v4.1-flash   high     -                  0            nan             nan            nan  ERROR Error code: 404 - {'error': {'message': 'No endpoints found for deepseek/deepseek-v4.1-flash. Every 
+deepseek/deepseek-v4.1-flash   xhigh    -                  0            nan             nan            nan  ERROR Error code: 404 - {'error': {'message': 'No endpoints found for deepseek/deepseek-v4.1-flash. Every 
+deepseek/deepseek-v4.1-flash   max      -                  0            nan             nan            nan  ERROR Error code: 404 - {'error': {'message': 'No endpoints found for deepseek/deepseek-v4.1-flash. Every 
+  -> deepseek/deepseek-v4.1-flash: lowest = 'minimal' (cannot switch off)
+
+run configuration (planned rule):
+  openai/gpt-6-luna: effort=none
+  openai/gpt-6-sol: effort=none
+  qwen/qwen3.8-flash: effort=none
+  google/gemini-3.8-flash: effort=minimal
+  deepseek/deepseek-v4.1-flash: effort=minimal
+  openai/gpt-6-sol@max: effort=max
+
+wrote configs/full.json
